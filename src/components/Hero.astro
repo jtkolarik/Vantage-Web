@@ -1,0 +1,49 @@
+---
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background Image -->
+  <div class="absolute inset-0">
+    <img
+      src="/images/hero-porch.png"
+      alt="Farmhouse porch at twilight with telescope and rocking chair, looking out toward the horizon"
+      class="w-full h-full object-cover object-center"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/50 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-navy/30"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-24">
+    <div class="max-w-2xl">
+      <h1 class="font-display text-4xl md:text-5xl lg:text-6xl font-medium text-cream leading-tight mb-6">
+        Vantage Studio
+      </h1>
+      <p class="text-xl md:text-2xl lg:text-3xl text-cream/90 font-light leading-relaxed mb-8">
+        A wider view of what your business can be.
+      </p>
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 bg-amber hover:bg-orange text-navy px-6 py-3 font-medium transition-colors duration-200"
+      >
+        Get in touch
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
+    <a href="#services" class="flex flex-col items-center gap-2 text-cream/60 hover:text-cream transition-colors">
+      <span class="text-sm tracking-wider uppercase">Explore</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+      </svg>
+    </a>
+  </div>
+</section>

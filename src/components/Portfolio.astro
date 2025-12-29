@@ -1,0 +1,102 @@
+---
+const projects = [
+  {
+    name: 'Noble Contracting',
+    type: 'Construction',
+    url: 'https://noblecontracting.netlify.app/',
+    image: '/images/portfolio/noble.png'
+  },
+  {
+    name: 'Redemption Electric',
+    type: 'Electrical Services',
+    url: 'https://redemptionelectric.netlify.app/',
+    image: '/images/portfolio/redemption.png'
+  },
+  {
+    name: 'Rydell',
+    type: 'Auto Services',
+    url: 'https://rydell.netlify.app/',
+    image: '/images/portfolio/rydell.png'
+  }
+];
+---
+
+<section id="work" class="relative py-24 lg:py-32 overflow-hidden">
+  <!-- Background with contrails image -->
+  <div class="absolute inset-0">
+    <img
+      src="/images/contrails.png"
+      alt=""
+      class="w-full h-full object-cover opacity-20"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-navy via-navy/95 to-navy"></div>
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+    <h2 class="font-display text-3xl md:text-4xl text-cream mb-4 text-center">
+      Recent Work
+    </h2>
+    <p class="text-cream/70 text-center mb-16 max-w-2xl mx-auto">
+      A selection of recent projects we've built for businesses ready to grow.
+    </p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {projects.map((project) => (
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group block"
+        >
+          <div class="relative bg-twilight/50 rounded-lg overflow-hidden shadow-xl transition-transform duration-300 group-hover:-translate-y-2">
+            <!-- Browser Chrome -->
+            <div class="bg-twilight/80 px-4 py-3 flex items-center gap-2">
+              <div class="flex gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-cream/20"></span>
+                <span class="w-3 h-3 rounded-full bg-cream/20"></span>
+                <span class="w-3 h-3 rounded-full bg-cream/20"></span>
+              </div>
+              <div class="flex-1 mx-4">
+                <div class="bg-navy/50 rounded px-3 py-1 text-xs text-cream/50 truncate">
+                  {project.url.replace('https://', '')}
+                </div>
+              </div>
+            </div>
+
+            <!-- Screenshot -->
+            <div class="aspect-[16/10] bg-navy/50 relative overflow-hidden">
+              <img
+                src={project.image}
+                alt={`${project.name} website screenshot`}
+                class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+              <!-- Fallback if image doesn't exist -->
+              <div class="absolute inset-0 flex items-center justify-center text-cream/30 bg-twilight/30">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-16 h-16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Info -->
+          <div class="mt-4 flex items-center justify-between">
+            <div>
+              <h3 class="font-display text-lg text-cream group-hover:text-amber transition-colors">
+                {project.name}
+              </h3>
+              <p class="text-sm text-cream/60">{project.type}</p>
+            </div>
+            <span class="text-amber opacity-0 group-hover:opacity-100 transition-opacity">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
