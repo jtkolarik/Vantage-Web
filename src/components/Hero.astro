@@ -23,6 +23,9 @@
     <div class="particle particle-3"></div>
     <div class="particle particle-4"></div>
     <div class="particle particle-5"></div>
+    <div class="particle particle-6"></div>
+    <div class="particle particle-7"></div>
+    <div class="particle particle-8"></div>
   </div>
 
   <!-- Content -->
@@ -98,33 +101,37 @@
   /* Floating particles */
   .particle {
     position: absolute;
-    width: 4px;
-    height: 4px;
-    background: rgba(212, 165, 116, 0.4);
+    width: 3px;
+    height: 3px;
+    background: rgba(212, 165, 116, 0.7);
     border-radius: 50%;
-    animation: float 20s infinite;
+    animation: float 15s infinite;
+    box-shadow: 0 0 6px rgba(212, 165, 116, 0.5);
   }
 
-  .particle-1 { left: 10%; top: 20%; animation-delay: 0s; }
-  .particle-2 { left: 20%; top: 60%; animation-delay: -4s; }
-  .particle-3 { left: 70%; top: 30%; animation-delay: -8s; }
-  .particle-4 { left: 80%; top: 70%; animation-delay: -12s; }
-  .particle-5 { left: 50%; top: 80%; animation-delay: -16s; }
+  .particle-1 { left: 5%; top: 20%; animation-delay: 0s; width: 4px; height: 4px; }
+  .particle-2 { left: 15%; top: 60%; animation-delay: -2s; }
+  .particle-3 { left: 65%; top: 25%; animation-delay: -4s; width: 5px; height: 5px; }
+  .particle-4 { left: 85%; top: 65%; animation-delay: -6s; }
+  .particle-5 { left: 45%; top: 75%; animation-delay: -8s; width: 4px; height: 4px; }
+  .particle-6 { left: 30%; top: 35%; animation-delay: -10s; }
+  .particle-7 { left: 75%; top: 45%; animation-delay: -12s; width: 4px; height: 4px; }
+  .particle-8 { left: 55%; top: 15%; animation-delay: -14s; }
 
   @keyframes float {
     0%, 100% {
       transform: translate(0, 0) scale(1);
       opacity: 0;
     }
-    10% {
-      opacity: 0.6;
+    5% {
+      opacity: 0.8;
     }
     50% {
-      transform: translate(100px, -100px) scale(1.5);
-      opacity: 0.3;
+      transform: translate(80px, -80px) scale(1.2);
+      opacity: 0.5;
     }
-    90% {
-      opacity: 0.6;
+    95% {
+      opacity: 0.8;
     }
   }
 </style>
