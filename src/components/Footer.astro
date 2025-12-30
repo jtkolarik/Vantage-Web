@@ -2,26 +2,49 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="py-12 border-t border-cream/10">
+<footer class="relative py-16 border-t border-cream/5">
   <div class="max-w-6xl mx-auto px-6 lg:px-8">
-    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="font-display text-xl text-cream">
-        Vantage Studio
+    <div class="grid md:grid-cols-3 gap-12 mb-12">
+      <!-- Brand -->
+      <div>
+        <div class="font-display text-2xl text-cream mb-4">Vantage Studio</div>
+        <p class="text-cream/50 text-sm leading-relaxed">
+          A wider view of what your business can be.
+        </p>
       </div>
 
-      <a
-        href="#"
-        class="text-cream/50 hover:text-cream transition-colors flex items-center gap-2"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-        Back to top
-      </a>
+      <!-- Quick Links -->
+      <div>
+        <p class="text-cream/40 text-sm uppercase tracking-wider mb-4">Navigate</p>
+        <div class="space-y-2">
+          <a href="#services" class="block text-cream/60 hover:text-amber transition-colors">Services</a>
+          <a href="#work" class="block text-cream/60 hover:text-amber transition-colors">Work</a>
+          <a href="#about" class="block text-cream/60 hover:text-amber transition-colors">About</a>
+          <a href="#contact" class="block text-cream/60 hover:text-amber transition-colors">Contact</a>
+        </div>
+      </div>
+
+      <!-- Back to top -->
+      <div class="md:text-right">
+        <a
+          href="#"
+          class="inline-flex items-center gap-2 text-cream/50 hover:text-amber transition-colors group"
+        >
+          <span>Back to top</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:-translate-y-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </a>
+      </div>
     </div>
 
-    <div class="mt-8 text-center text-sm text-cream/40">
-      &copy; {currentYear} Vantage Studio. All rights reserved.
+    <div class="pt-8 border-t border-cream/5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-cream/30">
+        &copy; {currentYear} Vantage Studio. All rights reserved.
+      </p>
+      <p class="text-sm text-cream/30">
+        Midwest, USA
+      </p>
     </div>
   </div>
 </footer>

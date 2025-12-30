@@ -1,87 +1,159 @@
 ---
 ---
 
-<section id="contact" class="relative py-24 lg:py-32">
-  <div class="absolute inset-0 bg-gradient-to-b from-navy via-twilight/20 to-navy"></div>
+<section id="contact" class="relative py-32 lg:py-40 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-navy via-twilight/10 to-navy"></div>
 
-  <div class="relative z-10 max-w-2xl mx-auto px-6 lg:px-8">
-    <h2 class="font-display text-3xl md:text-4xl text-cream mb-4 text-center">
-      Let's Talk
-    </h2>
-    <p class="text-cream/70 text-center mb-12">
-      Have a project in mind? We'd love to hear about it.
-    </p>
+  <!-- Decorative elements -->
+  <div class="absolute top-0 right-1/4 w-96 h-96 bg-amber/5 rounded-full blur-3xl"></div>
 
-    <form
-      name="contact"
-      method="POST"
-      action="/success"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      class="space-y-6"
-    >
-      <!-- Honeypot field for spam prevention -->
-      <p class="hidden">
-        <label>
-          Don't fill this out: <input name="bot-field" />
-        </label>
-      </p>
-
-      <input type="hidden" name="form-name" value="contact" />
-
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+      <!-- Left Column - Text -->
       <div>
-        <label for="name" class="block text-sm text-cream/80 mb-2">
-          Name
-        </label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          class="w-full px-4 py-3 bg-twilight/50 border border-cream/20 text-cream placeholder-cream/40 focus:outline-none focus:border-amber transition-colors"
-          placeholder="Your name"
-        />
+        <p class="reveal text-amber tracking-[0.3em] uppercase text-sm mb-4">Get In Touch</p>
+        <h2 class="reveal font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-tight mb-8">
+          Let's build something great together
+        </h2>
+
+        <p class="reveal text-lg text-cream/60 leading-relaxed mb-12">
+          Have a project in mind? We'd love to hear about it. Tell us what you're working on and we'll get back to you within 24 hours.
+        </p>
+
+        <div class="reveal space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 flex items-center justify-center border border-cream/10 text-amber">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-cream/40 uppercase tracking-wider">Email</p>
+              <p class="text-cream">hello@vantage-studio.com</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 flex items-center justify-center border border-cream/10 text-amber">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm text-cream/40 uppercase tracking-wider">Location</p>
+              <p class="text-cream">Midwest, USA</p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <label for="email" class="block text-sm text-cream/80 mb-2">
-          Email
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          class="w-full px-4 py-3 bg-twilight/50 border border-cream/20 text-cream placeholder-cream/40 focus:outline-none focus:border-amber transition-colors"
-          placeholder="you@example.com"
-        />
-      </div>
-
-      <div>
-        <label for="message" class="block text-sm text-cream/80 mb-2">
-          Message
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows="5"
-          required
-          class="w-full px-4 py-3 bg-twilight/50 border border-cream/20 text-cream placeholder-cream/40 focus:outline-none focus:border-amber transition-colors resize-none"
-          placeholder="Tell us about your project..."
-        ></textarea>
-      </div>
-
-      <div class="pt-4">
-        <button
-          type="submit"
-          class="w-full bg-amber hover:bg-orange text-navy font-medium py-4 px-6 transition-colors duration-200 flex items-center justify-center gap-2"
+      <!-- Right Column - Form -->
+      <div class="reveal">
+        <form
+          name="contact"
+          method="POST"
+          action="/success"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="space-y-6 bg-twilight/20 border border-cream/5 p-8 lg:p-10"
         >
-          Send Message
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </button>
+          <!-- Honeypot field for spam prevention -->
+          <p class="hidden">
+            <label>
+              Don't fill this out: <input name="bot-field" />
+            </label>
+          </p>
+
+          <input type="hidden" name="form-name" value="contact" />
+
+          <div>
+            <label for="name" class="block text-sm text-cream/60 mb-2 uppercase tracking-wider">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full px-0 py-3 bg-transparent border-0 border-b border-cream/20 text-cream placeholder-cream/30 focus:outline-none focus:border-amber transition-colors"
+              placeholder="Your name"
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm text-cream/60 mb-2 uppercase tracking-wider">
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full px-0 py-3 bg-transparent border-0 border-b border-cream/20 text-cream placeholder-cream/30 focus:outline-none focus:border-amber transition-colors"
+              placeholder="you@example.com"
+            />
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm text-cream/60 mb-2 uppercase tracking-wider">
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              class="w-full px-0 py-3 bg-transparent border-0 border-b border-cream/20 text-cream placeholder-cream/30 focus:outline-none focus:border-amber transition-colors resize-none"
+              placeholder="Tell us about your project..."
+            ></textarea>
+          </div>
+
+          <div class="pt-6">
+            <button
+              type="submit"
+              class="group w-full bg-amber hover:bg-orange text-navy font-medium py-4 px-6 transition-all duration-300 flex items-center justify-center gap-3"
+            >
+              Send Message
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </button>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   </div>
 </section>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 100);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('#contact .reveal').forEach(el => observer.observe(el));
+</script>

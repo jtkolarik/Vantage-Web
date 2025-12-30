@@ -1,31 +1,106 @@
 ---
 ---
 
-<section id="about" class="relative py-24 lg:py-32 overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-b from-navy via-twilight/20 to-navy"></div>
+<section id="about" class="relative py-32 lg:py-40 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-b from-navy via-twilight/10 to-navy"></div>
 
-  <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
-    <h2 class="font-display text-3xl md:text-4xl text-cream mb-12 text-center">
-      Who We Are
-    </h2>
+  <!-- Decorative elements -->
+  <div class="absolute top-1/4 left-0 w-64 h-64 bg-amber/5 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-twilight/20 rounded-full blur-3xl"></div>
 
-    <div class="space-y-8 text-lg md:text-xl text-cream/85 leading-relaxed text-center">
-      <p>
-        We're a small studio based in the Midwest — where the sky is wide and the opportunities are endless.
-      </p>
-      <p>
-        We believe great businesses deserve to be seen. Whether you're just getting started online or ready to level up, we bring the same care and craft to every project.
-      </p>
-    </div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+      <!-- Left Column - Text -->
+      <div>
+        <p class="reveal text-amber tracking-[0.3em] uppercase text-sm mb-4">Who We Are</p>
+        <h2 class="reveal font-display text-4xl md:text-5xl text-cream leading-tight mb-8">
+          A small studio with a wide perspective
+        </h2>
 
-    <div class="mt-16 flex justify-center">
-      <div class="inline-flex items-center gap-3 text-wheat">
-        <span class="w-12 h-px bg-wheat/50"></span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
-        </svg>
-        <span class="w-12 h-px bg-wheat/50"></span>
+        <div class="space-y-6 text-lg text-cream/70 leading-relaxed">
+          <p class="reveal">
+            We're based in the Midwest — where the sky is wide and the opportunities are endless. That perspective shapes everything we do.
+          </p>
+          <p class="reveal">
+            We believe great businesses deserve to be seen. Whether you're just getting started online or ready to level up, we bring the same care and craft to every project.
+          </p>
+        </div>
+
+        <div class="reveal mt-10 pt-10 border-t border-cream/10">
+          <div class="flex items-center gap-8">
+            <div>
+              <p class="font-display text-4xl text-amber mb-1">100%</p>
+              <p class="text-sm text-cream/50 uppercase tracking-wider">Satisfaction</p>
+            </div>
+            <div class="w-px h-12 bg-cream/10"></div>
+            <div>
+              <p class="font-display text-4xl text-amber mb-1">24hr</p>
+              <p class="text-sm text-cream/50 uppercase tracking-wider">Response time</p>
+            </div>
+            <div class="w-px h-12 bg-cream/10"></div>
+            <div>
+              <p class="font-display text-4xl text-amber mb-1">∞</p>
+              <p class="text-sm text-cream/50 uppercase tracking-wider">Revisions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column - Visual Element -->
+      <div class="reveal relative">
+        <div class="relative aspect-square max-w-md mx-auto">
+          <!-- Decorative frame -->
+          <div class="absolute inset-4 border border-cream/10"></div>
+          <div class="absolute inset-8 border border-amber/20"></div>
+
+          <!-- Center content -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="text-center">
+              <div class="font-display text-8xl lg:text-9xl text-cream/5 leading-none">V</div>
+              <p class="text-cream/40 text-sm tracking-[0.3em] uppercase mt-4">Vantage Studio</p>
+              <p class="text-cream/30 text-xs tracking-wider mt-2">Est. 2024</p>
+            </div>
+          </div>
+
+          <!-- Corner accents -->
+          <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-amber/40"></div>
+          <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-amber/40"></div>
+          <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-amber/40"></div>
+          <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-amber/40"></div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 100);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('#about .reveal').forEach(el => observer.observe(el));
+</script>

@@ -1,54 +1,142 @@
 ---
 ---
 
-<section id="services" class="relative py-24 lg:py-32">
+<section id="services" class="relative py-32 lg:py-40">
   <!-- Subtle background -->
-  <div class="absolute inset-0 bg-gradient-to-b from-navy via-twilight/30 to-navy"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-navy via-twilight/20 to-navy"></div>
 
-  <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
-    <h2 class="font-display text-3xl md:text-4xl text-cream mb-12 text-center">
-      What We Do
-    </h2>
-
-    <div class="space-y-8 text-lg md:text-xl text-cream/85 leading-relaxed">
-      <p>
-        We build websites that work as hard as you do. Clean design, fast performance, and the visibility to make sure the right people find you.
-      </p>
-      <p>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center mb-20">
+      <p class="reveal text-amber tracking-[0.3em] uppercase text-sm mb-4">What We Do</p>
+      <h2 class="reveal font-display text-4xl md:text-5xl lg:text-6xl text-cream mb-8 leading-tight">
+        Websites that work<br class="hidden md:block" /> as hard as you do
+      </h2>
+      <p class="reveal text-lg md:text-xl text-cream/60 leading-relaxed max-w-2xl mx-auto">
         From first impression to search results, we handle the details so you can focus on what you're good at.
       </p>
     </div>
 
-    <div class="mt-16 grid md:grid-cols-3 gap-8 text-center">
-      <div class="p-6">
-        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center text-amber">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <!-- Services Grid -->
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      <div class="reveal service-card group relative p-8 lg:p-10 bg-twilight/20 border border-cream/5 hover:border-amber/30 transition-all duration-500 hover:-translate-y-2">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber/0 via-amber/50 to-amber/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <div class="w-14 h-14 mb-6 flex items-center justify-center text-amber border border-amber/30 group-hover:bg-amber/10 transition-colors duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
         </div>
-        <h3 class="font-display text-xl text-cream mb-2">Web Design</h3>
-        <p class="text-cream/70">Clean, purposeful design that makes a strong first impression.</p>
+
+        <h3 class="font-display text-2xl text-cream mb-3 group-hover:text-amber transition-colors duration-300">Web Design</h3>
+        <p class="text-cream/60 leading-relaxed mb-6">Clean, purposeful design that makes a strong first impression and keeps visitors engaged.</p>
+
+        <ul class="space-y-2 text-sm text-cream/50">
+          <li class="flex items-center gap-2">
+            <span class="w-1 h-1 bg-amber rounded-full"></span>
+            Custom layouts
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1 h-1 bg-amber rounded-full"></span>
+            Mobile-first approach
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1 h-1 bg-amber rounded-full"></span>
+            Brand consistency
+          </li>
+        </ul>
       </div>
 
-      <div class="p-6">
-        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center text-amber">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div class="reveal service-card group relative p-8 lg:p-10 bg-twilight/20 border border-cream/5 hover:border-amber/30 transition-all duration-500 hover:-translate-y-2" style="animation-delay: 0.1s">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber/0 via-amber/50 to-amber/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <div class="w-14 h-14 mb-6 flex items-center justify-center text-amber border border-amber/30 group-hover:bg-amber/10 transition-colors duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
           </svg>
         </div>
-        <h3 class="font-display text-xl text-cream mb-2">Development</h3>
-        <p class="text-cream/70">Fast, reliable sites built with modern technology.</p>
+
+        <h3 class="font-display text-2xl text-cream mb-3 group-hover:text-amber transition-colors duration-300">Development</h3>
+        <p class="text-cream/60 leading-relaxed mb-6">Fast, reliable sites built with modern technology that scales with your business.</p>
+
+        <ul class="space-y-2 text-sm text-cream/50">
+          <li class="flex items-center gap-2">
+            <span class="w-1 h-1 bg-amber rounded-full"></span>
+            Lightning fast
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1 h-1 bg-amber rounded-full"></span>
+            Secure & reliable
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1 h-1 bg-amber rounded-full"></span>
+            Easy to update
+          </li>
+        </ul>
       </div>
 
-      <div class="p-6">
-        <div class="w-12 h-12 mx-auto mb-4 flex items-center justify-center text-amber">
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <div class="reveal service-card group relative p-8 lg:p-10 bg-twilight/20 border border-cream/5 hover:border-amber/30 transition-all duration-500 hover:-translate-y-2" style="animation-delay: 0.2s">
+        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber/0 via-amber/50 to-amber/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+        <div class="w-14 h-14 mb-6 flex items-center justify-center text-amber border border-amber/30 group-hover:bg-amber/10 transition-colors duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </div>
-        <h3 class="font-display text-xl text-cream mb-2">SEO & Visibility</h3>
-        <p class="text-cream/70">Get found by the right people in the right places.</p>
+
+        <h3 class="font-display text-2xl text-cream mb-3 group-hover:text-amber transition-colors duration-300">SEO & Visibility</h3>
+        <p class="text-cream/60 leading-relaxed mb-6">Get found by the right people in the right places when they're searching.</p>
+
+        <ul class="space-y-2 text-sm text-cream/50">
+          <li class="flex items-center gap-2">
+            <span class="w-1 h-1 bg-amber rounded-full"></span>
+            Local search optimization
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1 h-1 bg-amber rounded-full"></span>
+            Google Business setup
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="w-1 h-1 bg-amber rounded-full"></span>
+            Performance tracking
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.getAttribute('style')?.match(/animation-delay:\s*([\d.]+)s/);
+        const delayMs = delay ? parseFloat(delay[1]) * 1000 : index * 100;
+
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, delayMs);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('#services .reveal').forEach(el => observer.observe(el));
+</script>
