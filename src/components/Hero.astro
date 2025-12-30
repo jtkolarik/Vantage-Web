@@ -7,13 +7,13 @@
     <img
       src="/images/hero-porch.png"
       alt="Farmhouse porch at twilight with telescope and rocking chair, looking out toward the horizon"
-      class="w-full h-[120%] object-cover object-bottom scale-110"
+      class="w-full h-[130%] object-cover object-[center_80%]"
       loading="eager"
       fetchpriority="high"
     />
     <!-- Gradient Overlays - reduced opacity -->
     <div class="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/40 to-navy/20"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-navy/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-navy/20"></div>
   </div>
 
   <!-- Floating particles -->
@@ -136,7 +136,7 @@
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     if (heroParallax && scrolled < window.innerHeight) {
-      (heroParallax as HTMLElement).style.transform = `scale(1.1) translateY(${scrolled * 0.3}px)`;
+      (heroParallax as HTMLElement).style.transform = `translateY(${scrolled * 0.15}px)`;
     }
   });
 </script>
