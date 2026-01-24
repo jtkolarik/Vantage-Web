@@ -7,7 +7,7 @@
     <img
       src="/images/hero-porch.png"
       alt="Farmhouse porch at twilight with telescope and rocking chair, looking out toward the horizon"
-      class="w-full h-[130%] object-cover object-[center_80%]"
+      class="w-full h-full object-cover object-bottom"
       loading="eager"
       fetchpriority="high"
     />
@@ -64,13 +64,6 @@
     </div>
   </div>
 
-  <!-- Scroll Indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hero-reveal opacity-0" style="animation-delay: 1s">
-    <a href="#services" class="flex flex-col items-center gap-2 text-cream/40 hover:text-cream/70 transition-colors">
-      <span class="text-xs tracking-[0.2em] uppercase">Scroll</span>
-      <div class="w-px h-12 bg-gradient-to-b from-cream/40 to-transparent scroll-line"></div>
-    </a>
-  </div>
 </section>
 
 <style>
@@ -87,15 +80,6 @@
       opacity: 1;
       transform: translateY(0);
     }
-  }
-
-  .scroll-line {
-    animation: scrollPulse 2s ease-in-out infinite;
-  }
-
-  @keyframes scrollPulse {
-    0%, 100% { opacity: 0.4; height: 48px; }
-    50% { opacity: 0.8; height: 64px; }
   }
 
   /* Floating particles */

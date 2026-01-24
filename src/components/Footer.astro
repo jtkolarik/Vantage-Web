@@ -2,8 +2,19 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="relative py-16 border-t border-cream/5">
-  <div class="max-w-6xl mx-auto px-6 lg:px-8">
+<footer class="relative py-16 pb-32">
+  <!-- Full background image -->
+  <div class="absolute inset-0 overflow-hidden">
+    <img
+      src="/images/1.png"
+      alt=""
+      class="w-full h-full object-cover object-center"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-navy/40"></div>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-6 lg:px-8">
     <div class="grid md:grid-cols-3 gap-12 mb-12">
       <!-- Brand -->
       <div>
@@ -38,12 +49,9 @@ const currentYear = new Date().getFullYear();
       </div>
     </div>
 
-    <div class="pt-8 border-t border-cream/5 flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="pt-8 border-t border-cream/5">
       <p class="text-sm text-cream/30">
         &copy; {currentYear} Vantage Studio. All rights reserved.
-      </p>
-      <p class="text-sm text-cream/30">
-        Midwest, USA
       </p>
     </div>
   </div>
