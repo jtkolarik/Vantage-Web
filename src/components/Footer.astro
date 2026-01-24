@@ -3,20 +3,32 @@ const currentYear = new Date().getFullYear();
 ---
 
 <footer class="relative">
-  <!-- Full background image - uses natural aspect ratio -->
-  <div class="relative w-full">
+  <!-- Full background image - min height on mobile, natural aspect on desktop -->
+  <div class="relative w-full min-h-[400px] md:min-h-0">
     <img
       src="/images/hero-porch.png"
       alt=""
-      class="w-full h-auto"
+      class="absolute inset-0 w-full h-full object-cover object-bottom md:relative md:h-auto"
       loading="lazy"
     />
     <div class="absolute inset-0 bg-navy/40"></div>
 
+    <!-- Floating particles -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="footer-particle footer-particle-1"></div>
+      <div class="footer-particle footer-particle-2"></div>
+      <div class="footer-particle footer-particle-3"></div>
+      <div class="footer-particle footer-particle-4"></div>
+      <div class="footer-particle footer-particle-5"></div>
+      <div class="footer-particle footer-particle-6"></div>
+      <div class="footer-particle footer-particle-7"></div>
+      <div class="footer-particle footer-particle-8"></div>
+    </div>
+
     <!-- Footer content overlaid on image -->
     <div class="absolute inset-0 flex flex-col justify-end pb-8">
       <div class="max-w-6xl mx-auto px-6 lg:px-8 w-full">
-        <div class="grid md:grid-cols-3 gap-12 mb-12">
+        <div class="grid md:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
           <!-- Brand -->
           <div>
             <div class="font-display text-2xl text-cream mb-4">Vantage Studio</div>
@@ -59,3 +71,42 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
 </footer>
+
+<style>
+  /* Floating particles */
+  .footer-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(212, 165, 116, 0.7);
+    border-radius: 50%;
+    animation: footerFloat 15s infinite;
+    box-shadow: 0 0 6px rgba(212, 165, 116, 0.5);
+  }
+
+  .footer-particle-1 { left: 5%; top: 20%; animation-delay: 0s; width: 4px; height: 4px; }
+  .footer-particle-2 { left: 15%; top: 60%; animation-delay: -2s; }
+  .footer-particle-3 { left: 65%; top: 25%; animation-delay: -4s; width: 5px; height: 5px; }
+  .footer-particle-4 { left: 85%; top: 65%; animation-delay: -6s; }
+  .footer-particle-5 { left: 45%; top: 75%; animation-delay: -8s; width: 4px; height: 4px; }
+  .footer-particle-6 { left: 30%; top: 35%; animation-delay: -10s; }
+  .footer-particle-7 { left: 75%; top: 45%; animation-delay: -12s; width: 4px; height: 4px; }
+  .footer-particle-8 { left: 55%; top: 15%; animation-delay: -14s; }
+
+  @keyframes footerFloat {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0;
+    }
+    5% {
+      opacity: 0.8;
+    }
+    50% {
+      transform: translate(80px, -80px) scale(1.2);
+      opacity: 0.5;
+    }
+    95% {
+      opacity: 0.8;
+    }
+  }
+</style>
