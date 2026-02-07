@@ -33,17 +33,17 @@
     <div class="max-w-3xl">
       <!-- Main Headline -->
       <h1 class="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium text-cream leading-[1.1] mb-8">
-        <span class="block overflow-hidden">
+        <span class="split-line block overflow-hidden">
           <span class="split-word inline-block" style="--word-delay: 0">A</span>
           <span class="split-word inline-block" style="--word-delay: 1">wider</span>
           <span class="split-word inline-block !mr-0" style="--word-delay: 2">view</span>
         </span>
-        <span class="block overflow-hidden">
+        <span class="split-line block overflow-hidden">
           <span class="split-word inline-block" style="--word-delay: 3">of</span>
           <span class="split-word inline-block" style="--word-delay: 4">what</span>
           <span class="split-word inline-block !mr-0" style="--word-delay: 5">your</span>
         </span>
-        <span class="block overflow-hidden">
+        <span class="split-line block overflow-hidden">
           <span class="split-word gradient-text inline-block" style="--word-delay: 6">business</span>
           <span class="split-word gradient-text inline-block" style="--word-delay: 7">can</span>
           <span class="split-word gradient-text inline-block !mr-0" style="--word-delay: 8">be.</span>
@@ -82,6 +82,11 @@
 
 <style>
   /* Split-text cinematic reveal for hero headline */
+  .split-line {
+    padding-bottom: 0.15em;
+    margin-bottom: -0.15em;
+  }
+
   .split-word {
     opacity: 0;
     transform: translateY(110%);
