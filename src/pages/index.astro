@@ -12,9 +12,47 @@ import Footer from '../components/Footer.astro';
   <main>
     <Hero />
     <Services />
+
+    <!-- Atmospheric Marquee -->
+    <div class="relative py-8 overflow-hidden select-none pointer-events-none" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span class="font-display text-[8rem] md:text-[12rem] lg:text-[16rem] text-cream/[0.04] leading-none whitespace-nowrap uppercase tracking-wider">
+            Exponential Americana&nbsp;&nbsp;&bull;&nbsp;&nbsp;Exponential Americana&nbsp;&nbsp;&bull;&nbsp;&nbsp;Exponential Americana&nbsp;&nbsp;&bull;&nbsp;&nbsp;Exponential Americana&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+          </span>
+        </div>
+        <div class="marquee-content">
+          <span class="font-display text-[8rem] md:text-[12rem] lg:text-[16rem] text-cream/[0.04] leading-none whitespace-nowrap uppercase tracking-wider">
+            Exponential Americana&nbsp;&nbsp;&bull;&nbsp;&nbsp;Exponential Americana&nbsp;&nbsp;&bull;&nbsp;&nbsp;Exponential Americana&nbsp;&nbsp;&bull;&nbsp;&nbsp;Exponential Americana&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+          </span>
+        </div>
+      </div>
+    </div>
+
     <Portfolio />
     <About />
     <Contact />
   </main>
   <Footer />
 </Layout>
+
+<style>
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 60s linear infinite;
+  }
+
+  .marquee-content {
+    flex-shrink: 0;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+</style>

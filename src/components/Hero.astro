@@ -33,9 +33,21 @@
     <div class="max-w-3xl">
       <!-- Main Headline -->
       <h1 class="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium text-cream leading-[1.1] mb-8">
-        <span class="hero-reveal block opacity-0" style="animation-delay: 0.1s">A wider view</span>
-        <span class="hero-reveal block opacity-0" style="animation-delay: 0.2s">of what your</span>
-        <span class="hero-reveal block text-amber opacity-0" style="animation-delay: 0.3s">business can be.</span>
+        <span class="block overflow-hidden">
+          <span class="split-word inline-block" style="--word-delay: 0">A</span>
+          <span class="split-word inline-block" style="--word-delay: 1">wider</span>
+          <span class="split-word inline-block !mr-0" style="--word-delay: 2">view</span>
+        </span>
+        <span class="block overflow-hidden">
+          <span class="split-word inline-block" style="--word-delay: 3">of</span>
+          <span class="split-word inline-block" style="--word-delay: 4">what</span>
+          <span class="split-word inline-block !mr-0" style="--word-delay: 5">your</span>
+        </span>
+        <span class="block overflow-hidden">
+          <span class="split-word gradient-text inline-block" style="--word-delay: 6">business</span>
+          <span class="split-word gradient-text inline-block" style="--word-delay: 7">can</span>
+          <span class="split-word gradient-text inline-block !mr-0" style="--word-delay: 8">be.</span>
+        </span>
       </h1>
 
       <!-- Subheadline -->
@@ -47,6 +59,7 @@
       <div class="hero-reveal flex flex-wrap gap-4 opacity-0" style="animation-delay: 0.6s">
         <a
           href="#contact"
+          data-magnetic
           class="group inline-flex items-center gap-3 bg-amber hover:bg-orange text-navy px-8 py-4 font-medium transition-all duration-300 hover:gap-4"
         >
           Start a project
@@ -56,6 +69,7 @@
         </a>
         <a
           href="#work"
+          data-magnetic
           class="inline-flex items-center gap-2 text-cream/80 hover:text-cream px-6 py-4 font-medium transition-colors border border-cream/20 hover:border-cream/40"
         >
           View our work
@@ -67,6 +81,33 @@
 </section>
 
 <style>
+  /* Split-text cinematic reveal for hero headline */
+  .split-word {
+    opacity: 0;
+    transform: translateY(110%);
+    filter: blur(8px);
+    animation: splitReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(0.1s + var(--word-delay) * 0.08s);
+    margin-right: 0.25em;
+  }
+
+  @keyframes splitReveal {
+    0% {
+      opacity: 0;
+      transform: translateY(110%);
+      filter: blur(8px);
+    }
+    60% {
+      filter: blur(1px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0px);
+    }
+  }
+
+  /* Simple reveal for subtitle and CTA buttons */
   .hero-reveal {
     animation: heroReveal 0.8s ease-out forwards;
   }
@@ -82,41 +123,90 @@
     }
   }
 
-  /* Floating particles */
-  .particle {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: rgba(212, 165, 116, 0.7);
-    border-radius: 50%;
-    animation: float 15s infinite;
-    box-shadow: 0 0 6px rgba(212, 165, 116, 0.5);
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-amber) 0%, var(--color-orange) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--color-amber);
   }
 
-  .particle-1 { left: 5%; top: 20%; animation-delay: 0s; width: 4px; height: 4px; }
-  .particle-2 { left: 15%; top: 60%; animation-delay: -2s; }
-  .particle-3 { left: 65%; top: 25%; animation-delay: -4s; width: 5px; height: 5px; }
-  .particle-4 { left: 85%; top: 65%; animation-delay: -6s; }
-  .particle-5 { left: 45%; top: 75%; animation-delay: -8s; width: 4px; height: 4px; }
-  .particle-6 { left: 30%; top: 35%; animation-delay: -10s; }
-  .particle-7 { left: 75%; top: 45%; animation-delay: -12s; width: 4px; height: 4px; }
-  .particle-8 { left: 55%; top: 15%; animation-delay: -14s; }
+  /* Magnetic CTA buttons */
+  [data-magnetic] {
+    will-change: transform;
+    transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+  }
 
-  @keyframes float {
-    0%, 100% {
-      transform: translate(0, 0) scale(1);
-      opacity: 0;
-    }
-    5% {
-      opacity: 0.8;
-    }
-    50% {
-      transform: translate(80px, -80px) scale(1.2);
-      opacity: 0.5;
-    }
-    95% {
-      opacity: 0.8;
-    }
+  /* Enhanced firefly particles */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .particle-1 { left: 5%; top: 20%; width: 4px; height: 4px; background: rgba(212, 165, 116, 0.8); box-shadow: 0 0 8px 2px rgba(212, 165, 116, 0.4); animation: fireflyPath1 18s ease-in-out infinite, fireflyPulse 3s ease-in-out infinite alternate; }
+  .particle-2 { left: 15%; top: 60%; width: 2px; height: 2px; background: rgba(232, 148, 90, 0.7); box-shadow: 0 0 6px 1px rgba(232, 148, 90, 0.3); animation: fireflyPath2 22s ease-in-out infinite, fireflyPulse 4s ease-in-out infinite alternate; animation-delay: -3s, -1s; }
+  .particle-3 { left: 65%; top: 25%; width: 5px; height: 5px; background: rgba(212, 165, 116, 0.9); box-shadow: 0 0 10px 3px rgba(212, 165, 116, 0.5); animation: fireflyPath3 20s ease-in-out infinite, fireflyPulse 2.5s ease-in-out infinite alternate; animation-delay: -5s, -0.5s; }
+  .particle-4 { left: 85%; top: 65%; width: 3px; height: 3px; background: rgba(212, 165, 116, 0.6); box-shadow: 0 0 6px 1px rgba(212, 165, 116, 0.3); animation: fireflyPath4 25s ease-in-out infinite, fireflyPulse 3.5s ease-in-out infinite alternate; animation-delay: -8s, -2s; }
+  .particle-5 { left: 45%; top: 75%; width: 4px; height: 4px; background: rgba(232, 148, 90, 0.8); box-shadow: 0 0 8px 2px rgba(232, 148, 90, 0.4); animation: fireflyPath5 19s ease-in-out infinite, fireflyPulse 3s ease-in-out infinite alternate; animation-delay: -12s, -1.5s; }
+  .particle-6 { left: 30%; top: 35%; width: 2px; height: 2px; background: rgba(212, 165, 116, 0.5); box-shadow: 0 0 5px 1px rgba(212, 165, 116, 0.2); animation: fireflyPath6 24s ease-in-out infinite, fireflyPulse 4.5s ease-in-out infinite alternate; animation-delay: -15s, -3s; }
+  .particle-7 { left: 75%; top: 45%; width: 6px; height: 6px; background: rgba(212, 165, 116, 0.7); box-shadow: 0 0 12px 4px rgba(212, 165, 116, 0.5); animation: fireflyPath7 21s ease-in-out infinite, fireflyPulse 2s ease-in-out infinite alternate; animation-delay: -10s, -0.8s; }
+  .particle-8 { left: 55%; top: 15%; width: 3px; height: 3px; background: rgba(232, 148, 90, 0.6); box-shadow: 0 0 7px 2px rgba(232, 148, 90, 0.3); animation: fireflyPath8 23s ease-in-out infinite, fireflyPulse 3.8s ease-in-out infinite alternate; animation-delay: -7s, -2.5s; }
+
+  @keyframes fireflyPulse {
+    0% { opacity: 0.2; box-shadow: 0 0 4px 1px rgba(212, 165, 116, 0.2); }
+    100% { opacity: 0.9; box-shadow: 0 0 12px 4px rgba(212, 165, 116, 0.6); }
+  }
+
+  @keyframes fireflyPath1 {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(40px, -60px); }
+    50% { transform: translate(-20px, -100px); }
+    75% { transform: translate(60px, -40px); }
+  }
+  @keyframes fireflyPath2 {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-50px, -30px); }
+    50% { transform: translate(30px, -80px); }
+    75% { transform: translate(-70px, -50px); }
+  }
+  @keyframes fireflyPath3 {
+    0%, 100% { transform: translate(0, 0); }
+    20% { transform: translate(30px, -40px); }
+    40% { transform: translate(-40px, -90px); }
+    60% { transform: translate(50px, -60px); }
+    80% { transform: translate(-20px, -30px); }
+  }
+  @keyframes fireflyPath4 {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(-60px, -20px); }
+    50% { transform: translate(20px, -70px); }
+    75% { transform: translate(-40px, -90px); }
+  }
+  @keyframes fireflyPath5 {
+    0%, 100% { transform: translate(0, 0); }
+    20% { transform: translate(50px, -50px); }
+    40% { transform: translate(-30px, -20px); }
+    60% { transform: translate(70px, -80px); }
+    80% { transform: translate(10px, -40px); }
+  }
+  @keyframes fireflyPath6 {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(-40px, -60px); }
+    66% { transform: translate(40px, -30px); }
+  }
+  @keyframes fireflyPath7 {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(20px, -80px); }
+    50% { transform: translate(-50px, -40px); }
+    75% { transform: translate(30px, -60px); }
+  }
+  @keyframes fireflyPath8 {
+    0%, 100% { transform: translate(0, 0); }
+    20% { transform: translate(-30px, -50px); }
+    40% { transform: translate(60px, -30px); }
+    60% { transform: translate(-20px, -70px); }
+    80% { transform: translate(40px, -20px); }
   }
 </style>
 
@@ -130,4 +220,36 @@
       (heroParallax as HTMLElement).style.transform = `translateY(${scrolled * 0.15}px)`;
     }
   });
+
+  // Magnetic CTA buttons - desktop only
+  if (window.matchMedia('(pointer: fine) and (min-width: 768px)').matches) {
+    const magneticButtons = document.querySelectorAll<HTMLElement>('[data-magnetic]');
+    const PROXIMITY = 150;
+    const STRENGTH = 0.3;
+
+    magneticButtons.forEach((btn) => {
+      const heroSection = btn.closest('section');
+      if (!heroSection) return;
+
+      heroSection.addEventListener('mousemove', (e: MouseEvent) => {
+        const rect = btn.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        const distX = e.clientX - centerX;
+        const distY = e.clientY - centerY;
+        const distance = Math.sqrt(distX * distX + distY * distY);
+
+        if (distance < PROXIMITY) {
+          const pull = (1 - distance / PROXIMITY) * STRENGTH;
+          btn.style.transform = `translate(${distX * pull}px, ${distY * pull}px)`;
+        } else {
+          btn.style.transform = '';
+        }
+      });
+
+      heroSection.addEventListener('mouseleave', () => {
+        btn.style.transform = '';
+      });
+    });
+  }
 </script>
