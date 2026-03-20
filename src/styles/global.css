@@ -1,32 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-navy: #0a1628;
-  --color-twilight: #1a3a5c;
-  --color-amber: #d4a574;
-  --color-orange: #e8945a;
-  --color-cream: #f5f0e8;
-  --color-wheat: #c9b896;
+  /* Darks — the sky */
+  --color-void: #0a0c10;
+  --color-night: #111827;
+  --color-dusk: #1c2333;
 
-  --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  /* Warms — the porch light */
+  --color-amber: #d4923a;
+  --color-ember: #b8742a;
+  --color-glow: #f5deb3;
+
+  /* Cools — the sky gradient */
+  --color-steel: #4a5568;
+  --color-slate: #94a3b8;
+  --color-cloud: #cbd5e1;
+
+  /* Utility */
+  --color-white: #f8fafc;
+  --color-glass: rgba(255, 255, 255, 0.04);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+
+  /* Fonts */
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+
+  /* Typography scale */
+  --text-hero: clamp(3.5rem, 8vw, 7rem);
+  --text-h1: clamp(2.5rem, 5vw, 4.5rem);
+  --text-h2: clamp(1.75rem, 3vw, 2.5rem);
+  --text-h3: clamp(1.25rem, 2vw, 1.5rem);
+  --text-body: clamp(1rem, 1.2vw, 1.125rem);
+  --text-small: clamp(0.8rem, 1vw, 0.875rem);
+  --text-caption: 0.75rem;
+
+  /* Layout */
+  --section-gap: clamp(6rem, 12vh, 10rem);
+
+  /* Easing */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 html {
-  scroll-behavior: smooth;
+  /* Lenis handles smooth scrolling — no CSS needed */
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: var(--color-navy);
-  color: var(--color-cream);
+  background-color: var(--color-void);
+  color: var(--color-cloud);
   line-height: 1.7;
 }
 
 ::selection {
   background-color: var(--color-amber);
-  color: var(--color-navy);
+  color: var(--color-void);
 }
 
 /* Vignette overlay */
@@ -39,7 +69,7 @@ body::before {
   background: radial-gradient(
     ellipse at center,
     transparent 50%,
-    rgba(10, 22, 40, 0.3) 100%
+    rgba(10, 12, 16, 0.3) 100%
   );
 }
 
@@ -48,7 +78,7 @@ body::before {
     background: radial-gradient(
       ellipse at center,
       transparent 40%,
-      rgba(10, 22, 40, 0.2) 100%
+      rgba(10, 12, 16, 0.2) 100%
     );
   }
 }

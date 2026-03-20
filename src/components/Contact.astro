@@ -1,147 +1,207 @@
 ---
 ---
 
-<section id="contact" class="relative py-32 lg:py-40 overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-b from-navy via-twilight/10 to-navy"></div>
+<section id="contact" class="relative overflow-hidden">
+  <!-- Background image -->
+  <div class="absolute inset-0">
+    <img
+      src="/images/hero-porch.png"
+      alt=""
+      class="w-full h-full object-cover object-bottom"
+      style="filter: contrast(1.05) saturate(0.9);"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-void/60"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-void via-void/40 to-void/20"></div>
+  </div>
 
-  <!-- Decorative elements -->
-  <div class="absolute top-0 right-1/4 w-96 h-96 bg-amber/5 rounded-full blur-3xl"></div>
+  <!-- Floating wisps -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="ct-wisp ct-wisp-1"></div>
+    <div class="ct-wisp ct-wisp-2"></div>
+    <div class="ct-wisp ct-wisp-3"></div>
+    <div class="ct-wisp ct-wisp-4"></div>
+  </div>
 
-  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
-      <!-- Left Column - Text -->
-      <div>
-        <p class="reveal text-amber tracking-[0.3em] uppercase text-sm mb-4">Get In Touch</p>
-        <h2 class="reveal font-display text-4xl md:text-5xl lg:text-6xl text-cream leading-tight mb-8">
-          Let's build something great together
-        </h2>
-
-        <p class="reveal text-lg text-cream/60 leading-relaxed mb-12">
-          Have a project in mind? We'd love to hear about it. Tell us what you're working on and we'll get back to you within 24 hours.
-        </p>
-
-        <div class="reveal space-y-6">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 flex items-center justify-center border border-cream/10 text-amber">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <div>
-              <p class="text-sm text-cream/40 uppercase tracking-wider">Location</p>
-              <p class="text-cream">Midwest, USA</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Column - Form -->
-      <div class="reveal">
-        <form
-          name="contact"
-          method="POST"
-          action="/success"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          class="space-y-6 bg-twilight/20 border border-cream/5 p-8 lg:p-10"
-        >
-          <!-- Honeypot field for spam prevention -->
-          <p class="hidden">
-            <label>
-              Don't fill this out: <input name="bot-field" />
-            </label>
-          </p>
-
-          <input type="hidden" name="form-name" value="contact" />
-
-          <div>
-            <label for="name" class="block text-sm text-cream/60 mb-2 uppercase tracking-wider">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              class="w-full px-0 py-3 bg-transparent border-0 border-b border-cream/20 text-cream placeholder-cream/30 focus:outline-none focus:border-amber transition-colors"
-              placeholder="Your name"
-            />
-          </div>
-
-          <div>
-            <label for="email" class="block text-sm text-cream/60 mb-2 uppercase tracking-wider">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="w-full px-0 py-3 bg-transparent border-0 border-b border-cream/20 text-cream placeholder-cream/30 focus:outline-none focus:border-amber transition-colors"
-              placeholder="you@example.com"
-            />
-          </div>
-
-          <div>
-            <label for="message" class="block text-sm text-cream/60 mb-2 uppercase tracking-wider">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              rows="4"
-              required
-              class="w-full px-0 py-3 bg-transparent border-0 border-b border-cream/20 text-cream placeholder-cream/30 focus:outline-none focus:border-amber transition-colors resize-none"
-              placeholder="Tell us about your project..."
-            ></textarea>
-          </div>
-
-          <div class="pt-6">
-            <button
-              type="submit"
-              class="group w-full bg-amber hover:bg-orange text-navy font-medium py-4 px-6 transition-all duration-300 flex items-center justify-center gap-3"
-            >
-              Send Message
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
-          </div>
-        </form>
-      </div>
+  <div class="relative z-10 mx-auto px-6 lg:px-8 py-24 md:py-32 lg:py-40" style="width: min(85vw, 900px);">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <p class="section-label text-amber font-sans font-medium text-sm mb-4" style="font-variant: all-small-caps; letter-spacing: 0.15em;">Get In Touch</p>
+      <h2 class="section-title font-display text-glow leading-tight" style="font-size: var(--text-h1)">
+        Let's build something together.
+      </h2>
     </div>
+
+    <!-- Form -->
+    <form
+      name="contact"
+      method="POST"
+      action="/success"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      class="contact-form max-w-lg mx-auto space-y-8"
+    >
+      <!-- Honeypot field for spam prevention -->
+      <p class="hidden" aria-hidden="true">
+        <label>
+          <input name="bot-field" tabindex="-1" autocomplete="off" />
+        </label>
+      </p>
+
+      <input type="hidden" name="form-name" value="contact" />
+
+      <!-- Name -->
+      <div class="form-field relative">
+        <input
+          type="text"
+          id="name"
+          name="name"
+          required
+          placeholder=" "
+          class="w-full px-0 py-3 bg-transparent border-0 border-b border-cloud/20 text-glow placeholder-transparent focus:outline-none focus:border-amber transition-colors duration-300 font-sans"
+        />
+        <label for="name" class="floating-label absolute left-0 top-3 text-cloud/60 text-sm font-sans pointer-events-none transition-all duration-300">
+          Name
+        </label>
+      </div>
+
+      <!-- Email -->
+      <div class="form-field relative">
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          placeholder=" "
+          class="w-full px-0 py-3 bg-transparent border-0 border-b border-cloud/20 text-glow placeholder-transparent focus:outline-none focus:border-amber transition-colors duration-300 font-sans"
+        />
+        <label for="email" class="floating-label absolute left-0 top-3 text-cloud/60 text-sm font-sans pointer-events-none transition-all duration-300">
+          Email
+        </label>
+      </div>
+
+      <!-- Message -->
+      <div class="form-field relative">
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          required
+          placeholder=" "
+          class="w-full px-0 py-3 bg-transparent border-0 border-b border-cloud/20 text-glow placeholder-transparent focus:outline-none focus:border-amber transition-colors duration-300 resize-none font-sans"
+        ></textarea>
+        <label for="message" class="floating-label absolute left-0 top-3 text-cloud/60 text-sm font-sans pointer-events-none transition-all duration-300">
+          Message
+        </label>
+      </div>
+
+      <!-- Submit -->
+      <div class="pt-4">
+        <button
+          type="submit"
+          class="w-full bg-amber hover:bg-ember text-void font-medium py-4 px-6 rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,146,58,0.3)] font-sans"
+        >
+          Send Message
+        </button>
+      </div>
+    </form>
   </div>
 </section>
 
 <style>
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  /* Floating label pattern */
+  .form-field input:focus ~ .floating-label,
+  .form-field input:not(:placeholder-shown) ~ .floating-label,
+  .form-field textarea:focus ~ .floating-label,
+  .form-field textarea:not(:placeholder-shown) ~ .floating-label {
+    top: -0.75rem;
+    font-size: 0.7rem;
+    color: var(--color-amber);
   }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+  /* Contact wisps */
+  .ct-wisp {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    background: rgba(212, 146, 58, 0.7);
+  }
+
+  .ct-wisp-1 {
+    left: 12%; top: 25%;
+    width: 3px; height: 3px;
+    box-shadow: 0 0 6px 2px rgba(212, 146, 58, 0.3);
+    animation: ctDrift1 22s ease-in-out infinite, ctGlow 3.5s ease-in-out infinite alternate;
+  }
+  .ct-wisp-2 {
+    left: 75%; top: 30%;
+    width: 4px; height: 4px;
+    box-shadow: 0 0 8px 2px rgba(212, 146, 58, 0.4);
+    animation: ctDrift2 18s ease-in-out infinite, ctGlow 2.5s ease-in-out infinite alternate;
+    animation-delay: -5s, -1s;
+  }
+  .ct-wisp-3 {
+    left: 85%; top: 65%;
+    width: 2px; height: 2px;
+    box-shadow: 0 0 5px 1px rgba(212, 146, 58, 0.2);
+    animation: ctDrift3 25s ease-in-out infinite, ctGlow 4s ease-in-out infinite alternate;
+    animation-delay: -10s, -2s;
+  }
+  .ct-wisp-4 {
+    left: 30%; top: 70%;
+    width: 3px; height: 3px;
+    box-shadow: 0 0 6px 1px rgba(212, 146, 58, 0.3);
+    animation: ctDrift4 20s ease-in-out infinite, ctGlow 3s ease-in-out infinite alternate;
+    animation-delay: -8s, -1.5s;
+  }
+
+  @keyframes ctGlow {
+    0%   { opacity: 0.15; }
+    100% { opacity: 0.75; }
+  }
+  @keyframes ctDrift1 {
+    0%, 100% { transform: translate(0, 0); }
+    25%  { transform: translate(35px, -20px); }
+    50%  { transform: translate(-15px, -45px); }
+    75%  { transform: translate(40px, -15px); }
+  }
+  @keyframes ctDrift2 {
+    0%, 100% { transform: translate(0, 0); }
+    25%  { transform: translate(-30px, -25px); }
+    50%  { transform: translate(20px, -50px); }
+    75%  { transform: translate(-45px, -20px); }
+  }
+  @keyframes ctDrift3 {
+    0%, 100% { transform: translate(0, 0); }
+    33%  { transform: translate(-25px, -35px); }
+    66%  { transform: translate(25px, -15px); }
+  }
+  @keyframes ctDrift4 {
+    0%, 100% { transform: translate(0, 0); }
+    25%  { transform: translate(20px, -30px); }
+    50%  { transform: translate(-35px, -15px); }
+    75%  { transform: translate(15px, -40px); }
   }
 </style>
 
 <script>
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, index * 100);
-      }
-    });
-  }, observerOptions);
+  gsap.registerPlugin(ScrollTrigger);
 
-  document.querySelectorAll('#contact .reveal').forEach(el => observer.observe(el));
+  gsap.from('#contact .section-label', {
+    scrollTrigger: { trigger: '#contact', start: 'top 85%' },
+    y: 30, opacity: 0, duration: 0.8, ease: 'power3.out'
+  });
+
+  gsap.from('#contact .section-title', {
+    scrollTrigger: { trigger: '#contact', start: 'top 85%' },
+    y: 40, opacity: 0, duration: 0.8, delay: 0.1, ease: 'power3.out'
+  });
+
+  gsap.from('#contact .contact-form', {
+    scrollTrigger: { trigger: '#contact .contact-form', start: 'top 85%' },
+    y: 40, opacity: 0, duration: 0.8, ease: 'power3.out'
+  });
 </script>

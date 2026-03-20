@@ -1,260 +1,187 @@
 ---
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+<section id="hero" class="relative min-h-screen flex items-end overflow-hidden">
   <!-- Background Image with Parallax -->
   <div class="absolute inset-0 hero-parallax">
     <img
       src="/images/1.png"
       alt="Farmhouse porch at twilight with telescope and rocking chair, looking out toward the horizon"
-      class="w-full h-full object-cover object-bottom"
+      class="w-full h-full object-cover object-bottom hero-image"
       loading="eager"
       fetchpriority="high"
     />
-    <!-- Gradient Overlays - reduced opacity -->
-    <div class="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/40 to-navy/20"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-navy/20"></div>
+    <!-- Gradient Overlays -->
+    <div class="absolute inset-0 bg-gradient-to-r from-void/80 via-void/40 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-void via-void/30 to-void/10"></div>
   </div>
 
-  <!-- Floating particles -->
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="particle particle-1"></div>
-    <div class="particle particle-2"></div>
-    <div class="particle particle-3"></div>
-    <div class="particle particle-4"></div>
-    <div class="particle particle-5"></div>
-    <div class="particle particle-6"></div>
-    <div class="particle particle-7"></div>
-    <div class="particle particle-8"></div>
+  <!-- Floating wisps -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+    <div class="wisp wisp-1"></div>
+    <div class="wisp wisp-2"></div>
+    <div class="wisp wisp-3"></div>
+    <div class="wisp wisp-4"></div>
+    <div class="wisp wisp-5"></div>
+    <div class="wisp wisp-6"></div>
   </div>
 
-  <!-- Content -->
-  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 py-24">
+  <!-- Content — lower-left positioning -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-8 pb-20 md:pb-28 lg:pb-32 pt-24">
     <div class="max-w-3xl">
       <!-- Main Headline -->
-      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-medium text-cream leading-[1.1] mb-8">
-        <span class="split-line block overflow-hidden">
-          <span class="split-word inline-block" style="--word-delay: 0">A</span>
-          <span class="split-word inline-block" style="--word-delay: 1">wider</span>
-          <span class="split-word inline-block !mr-0" style="--word-delay: 2">view</span>
-        </span>
-        <span class="split-line block overflow-hidden">
-          <span class="split-word inline-block" style="--word-delay: 3">of</span>
-          <span class="split-word inline-block" style="--word-delay: 4">what</span>
-          <span class="split-word inline-block !mr-0" style="--word-delay: 5">your</span>
-        </span>
-        <span class="split-line block overflow-hidden">
-          <span class="split-word gradient-text inline-block" style="--word-delay: 6">business</span>
-          <span class="split-word gradient-text inline-block" style="--word-delay: 7">can</span>
-          <span class="split-word gradient-text inline-block !mr-0" style="--word-delay: 8">be.</span>
-        </span>
+      <h1 class="hero-headline font-display font-semibold text-glow leading-[1.05] mb-8 tracking-[-0.02em]" style="font-size: var(--text-hero)">
+        A wider view of what your business can be.
       </h1>
 
-      <!-- Subheadline -->
-      <p class="hero-reveal text-lg md:text-xl text-cream/70 leading-relaxed mb-10 max-w-xl opacity-0" style="animation-delay: 0.5s">
-        We craft digital experiences that help businesses get seen in the places that matter.
-      </p>
-
-      <!-- CTA Buttons -->
-      <div class="hero-reveal flex flex-wrap gap-4 opacity-0" style="animation-delay: 0.6s">
+      <!-- Single CTA -->
+      <div class="hero-cta">
         <a
           href="#contact"
-          data-magnetic
-          class="group inline-flex items-center gap-3 bg-amber hover:bg-orange text-navy px-8 py-4 font-medium transition-all duration-300 hover:gap-4"
+          class="inline-flex items-center gap-3 bg-amber hover:bg-ember text-void px-8 py-4 font-medium rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(212,146,58,0.3)]"
         >
           Start a project
-          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
           </svg>
-        </a>
-        <a
-          href="#work"
-          data-magnetic
-          class="inline-flex items-center gap-2 text-cream/80 hover:text-cream px-6 py-4 font-medium transition-colors border border-cream/20 hover:border-cream/40"
-        >
-          View our work
         </a>
       </div>
     </div>
   </div>
-
 </section>
 
 <style>
-  /* Split-text cinematic reveal for hero headline */
-  .split-line {
-    padding-bottom: 0.15em;
-    margin-bottom: -0.15em;
+  .hero-image {
+    filter: contrast(1.05) saturate(0.9);
   }
 
-  .split-word {
-    opacity: 0;
-    transform: translateY(110%);
-    filter: blur(8px);
-    animation: splitReveal 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: calc(0.1s + var(--word-delay) * 0.08s);
-    margin-right: 0.25em;
-  }
-
-  @keyframes splitReveal {
-    0% {
-      opacity: 0;
-      transform: translateY(110%);
-      filter: blur(8px);
-    }
-    60% {
-      filter: blur(1px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-      filter: blur(0px);
-    }
-  }
-
-  /* Simple reveal for subtitle and CTA buttons */
-  .hero-reveal {
-    animation: heroReveal 0.8s ease-out forwards;
-  }
-
-  @keyframes heroReveal {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .gradient-text {
-    background: linear-gradient(135deg, var(--color-amber) 0%, var(--color-orange) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: var(--color-amber);
-  }
-
-  /* Magnetic CTA buttons */
-  [data-magnetic] {
-    will-change: transform;
-    transition: transform 0.3s cubic-bezier(0.33, 1, 0.68, 1);
-  }
-
-  /* Enhanced firefly particles */
-  .particle {
+  /* Floating wisps — warm amber fireflies */
+  .wisp {
     position: absolute;
     border-radius: 50%;
     pointer-events: none;
+    background: rgba(212, 146, 58, 0.7);
   }
 
-  .particle-1 { left: 5%; top: 20%; width: 4px; height: 4px; background: rgba(212, 165, 116, 0.8); box-shadow: 0 0 8px 2px rgba(212, 165, 116, 0.4); animation: fireflyPath1 18s ease-in-out infinite, fireflyPulse 3s ease-in-out infinite alternate; }
-  .particle-2 { left: 15%; top: 60%; width: 2px; height: 2px; background: rgba(232, 148, 90, 0.7); box-shadow: 0 0 6px 1px rgba(232, 148, 90, 0.3); animation: fireflyPath2 22s ease-in-out infinite, fireflyPulse 4s ease-in-out infinite alternate; animation-delay: -3s, -1s; }
-  .particle-3 { left: 65%; top: 25%; width: 5px; height: 5px; background: rgba(212, 165, 116, 0.9); box-shadow: 0 0 10px 3px rgba(212, 165, 116, 0.5); animation: fireflyPath3 20s ease-in-out infinite, fireflyPulse 2.5s ease-in-out infinite alternate; animation-delay: -5s, -0.5s; }
-  .particle-4 { left: 85%; top: 65%; width: 3px; height: 3px; background: rgba(212, 165, 116, 0.6); box-shadow: 0 0 6px 1px rgba(212, 165, 116, 0.3); animation: fireflyPath4 25s ease-in-out infinite, fireflyPulse 3.5s ease-in-out infinite alternate; animation-delay: -8s, -2s; }
-  .particle-5 { left: 45%; top: 75%; width: 4px; height: 4px; background: rgba(232, 148, 90, 0.8); box-shadow: 0 0 8px 2px rgba(232, 148, 90, 0.4); animation: fireflyPath5 19s ease-in-out infinite, fireflyPulse 3s ease-in-out infinite alternate; animation-delay: -12s, -1.5s; }
-  .particle-6 { left: 30%; top: 35%; width: 2px; height: 2px; background: rgba(212, 165, 116, 0.5); box-shadow: 0 0 5px 1px rgba(212, 165, 116, 0.2); animation: fireflyPath6 24s ease-in-out infinite, fireflyPulse 4.5s ease-in-out infinite alternate; animation-delay: -15s, -3s; }
-  .particle-7 { left: 75%; top: 45%; width: 6px; height: 6px; background: rgba(212, 165, 116, 0.7); box-shadow: 0 0 12px 4px rgba(212, 165, 116, 0.5); animation: fireflyPath7 21s ease-in-out infinite, fireflyPulse 2s ease-in-out infinite alternate; animation-delay: -10s, -0.8s; }
-  .particle-8 { left: 55%; top: 15%; width: 3px; height: 3px; background: rgba(232, 148, 90, 0.6); box-shadow: 0 0 7px 2px rgba(232, 148, 90, 0.3); animation: fireflyPath8 23s ease-in-out infinite, fireflyPulse 3.8s ease-in-out infinite alternate; animation-delay: -7s, -2.5s; }
-
-  @keyframes fireflyPulse {
-    0% { opacity: 0.2; box-shadow: 0 0 4px 1px rgba(212, 165, 116, 0.2); }
-    100% { opacity: 0.9; box-shadow: 0 0 12px 4px rgba(212, 165, 116, 0.6); }
+  .wisp-1 {
+    left: 8%;  top: 25%;
+    width: 4px; height: 4px;
+    box-shadow: 0 0 8px 2px rgba(212, 146, 58, 0.4);
+    animation: wispDrift1 20s ease-in-out infinite, wispGlow 3s ease-in-out infinite alternate;
+  }
+  .wisp-2 {
+    left: 70%; top: 20%;
+    width: 3px; height: 3px;
+    box-shadow: 0 0 6px 2px rgba(212, 146, 58, 0.3);
+    animation: wispDrift2 24s ease-in-out infinite, wispGlow 4s ease-in-out infinite alternate;
+    animation-delay: -4s, -1s;
+  }
+  .wisp-3 {
+    left: 45%; top: 65%;
+    width: 5px; height: 5px;
+    box-shadow: 0 0 10px 3px rgba(212, 146, 58, 0.5);
+    animation: wispDrift3 18s ease-in-out infinite, wispGlow 2.5s ease-in-out infinite alternate;
+    animation-delay: -8s, -0.5s;
+  }
+  .wisp-4 {
+    left: 85%; top: 55%;
+    width: 3px; height: 3px;
+    box-shadow: 0 0 6px 1px rgba(212, 146, 58, 0.3);
+    animation: wispDrift4 22s ease-in-out infinite, wispGlow 3.5s ease-in-out infinite alternate;
+    animation-delay: -12s, -2s;
+  }
+  .wisp-5 {
+    left: 25%; top: 45%;
+    width: 2px; height: 2px;
+    box-shadow: 0 0 5px 1px rgba(212, 146, 58, 0.2);
+    animation: wispDrift5 26s ease-in-out infinite, wispGlow 4.5s ease-in-out infinite alternate;
+    animation-delay: -15s, -3s;
+  }
+  .wisp-6 {
+    left: 60%; top: 35%;
+    width: 4px; height: 4px;
+    box-shadow: 0 0 8px 2px rgba(212, 146, 58, 0.4);
+    animation: wispDrift6 21s ease-in-out infinite, wispGlow 3s ease-in-out infinite alternate;
+    animation-delay: -6s, -1.5s;
   }
 
-  @keyframes fireflyPath1 {
-    0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(40px, -60px); }
-    50% { transform: translate(-20px, -100px); }
-    75% { transform: translate(60px, -40px); }
+  @keyframes wispGlow {
+    0%   { opacity: 0.15; }
+    100% { opacity: 0.8; }
   }
-  @keyframes fireflyPath2 {
+
+  @keyframes wispDrift1 {
     0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(-50px, -30px); }
-    50% { transform: translate(30px, -80px); }
-    75% { transform: translate(-70px, -50px); }
+    25%  { transform: translate(30px, -50px); }
+    50%  { transform: translate(-15px, -90px); }
+    75%  { transform: translate(45px, -35px); }
   }
-  @keyframes fireflyPath3 {
+  @keyframes wispDrift2 {
     0%, 100% { transform: translate(0, 0); }
-    20% { transform: translate(30px, -40px); }
-    40% { transform: translate(-40px, -90px); }
-    60% { transform: translate(50px, -60px); }
-    80% { transform: translate(-20px, -30px); }
+    25%  { transform: translate(-40px, -25px); }
+    50%  { transform: translate(20px, -70px); }
+    75%  { transform: translate(-55px, -40px); }
   }
-  @keyframes fireflyPath4 {
+  @keyframes wispDrift3 {
     0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(-60px, -20px); }
-    50% { transform: translate(20px, -70px); }
-    75% { transform: translate(-40px, -90px); }
+    20%  { transform: translate(25px, -35px); }
+    40%  { transform: translate(-30px, -75px); }
+    60%  { transform: translate(40px, -50px); }
+    80%  { transform: translate(-15px, -25px); }
   }
-  @keyframes fireflyPath5 {
+  @keyframes wispDrift4 {
     0%, 100% { transform: translate(0, 0); }
-    20% { transform: translate(50px, -50px); }
-    40% { transform: translate(-30px, -20px); }
-    60% { transform: translate(70px, -80px); }
-    80% { transform: translate(10px, -40px); }
+    25%  { transform: translate(-50px, -15px); }
+    50%  { transform: translate(15px, -60px); }
+    75%  { transform: translate(-35px, -80px); }
   }
-  @keyframes fireflyPath6 {
+  @keyframes wispDrift5 {
     0%, 100% { transform: translate(0, 0); }
-    33% { transform: translate(-40px, -60px); }
-    66% { transform: translate(40px, -30px); }
+    33%  { transform: translate(-30px, -50px); }
+    66%  { transform: translate(30px, -25px); }
   }
-  @keyframes fireflyPath7 {
+  @keyframes wispDrift6 {
     0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(20px, -80px); }
-    50% { transform: translate(-50px, -40px); }
-    75% { transform: translate(30px, -60px); }
-  }
-  @keyframes fireflyPath8 {
-    0%, 100% { transform: translate(0, 0); }
-    20% { transform: translate(-30px, -50px); }
-    40% { transform: translate(60px, -30px); }
-    60% { transform: translate(-20px, -70px); }
-    80% { transform: translate(40px, -20px); }
+    20%  { transform: translate(35px, -40px); }
+    40%  { transform: translate(-20px, -65px); }
+    60%  { transform: translate(50px, -30px); }
+    80%  { transform: translate(-10px, -55px); }
   }
 </style>
 
 <script>
-  // Parallax effect on scroll
-  const heroParallax = document.querySelector('.hero-parallax img');
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-  window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    if (heroParallax && scrolled < window.innerHeight) {
-      (heroParallax as HTMLElement).style.transform = `translateY(${scrolled * 0.15}px)`;
-    }
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Set initial states
+  gsap.set('.hero-headline', { y: 30, opacity: 0 });
+  gsap.set('.hero-cta', { y: 20, opacity: 0 });
+
+  // Hero entrance timeline
+  const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+
+  tl.to('.hero-headline', {
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+  }, 0.4)
+  .to('.hero-cta', {
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+  }, 0.8);
+
+  // Parallax on hero image
+  gsap.to('.hero-parallax img', {
+    yPercent: 15,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: '#hero',
+      start: 'top top',
+      end: 'bottom top',
+      scrub: true,
+    },
   });
-
-  // Magnetic CTA buttons - desktop only
-  if (window.matchMedia('(pointer: fine) and (min-width: 768px)').matches) {
-    const magneticButtons = document.querySelectorAll<HTMLElement>('[data-magnetic]');
-    const PROXIMITY = 150;
-    const STRENGTH = 0.3;
-
-    magneticButtons.forEach((btn) => {
-      const heroSection = btn.closest('section');
-      if (!heroSection) return;
-
-      heroSection.addEventListener('mousemove', (e: MouseEvent) => {
-        const rect = btn.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        const distX = e.clientX - centerX;
-        const distY = e.clientY - centerY;
-        const distance = Math.sqrt(distX * distX + distY * distY);
-
-        if (distance < PROXIMITY) {
-          const pull = (1 - distance / PROXIMITY) * STRENGTH;
-          btn.style.transform = `translate(${distX * pull}px, ${distY * pull}px)`;
-        } else {
-          btn.style.transform = '';
-        }
-      });
-
-      heroSection.addEventListener('mouseleave', () => {
-        btn.style.transform = '';
-      });
-    });
-  }
 </script>

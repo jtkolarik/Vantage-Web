@@ -1,0 +1,195 @@
+---
+---
+
+<header id="site-nav" class="fixed top-0 left-0 right-0 z-50 nav-hidden">
+  <div class="nav-backdrop h-14 md:h-14 flex items-center">
+    <div class="w-full max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#" class="font-display text-lg text-glow tracking-tight">Vantage Studio</a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="#services" class="nav-link text-sm font-sans font-normal text-slate hover:text-glow tracking-wide transition-colors duration-300">Services</a>
+        <a href="#work" class="nav-link text-sm font-sans font-normal text-slate hover:text-glow tracking-wide transition-colors duration-300">Work</a>
+        <a href="#about" class="nav-link text-sm font-sans font-normal text-slate hover:text-glow tracking-wide transition-colors duration-300">About</a>
+        <a href="#contact" class="nav-link text-sm font-sans font-normal text-slate hover:text-glow tracking-wide transition-colors duration-300">Contact</a>
+        <a href="#contact" class="bg-amber hover:bg-ember text-void px-5 py-2 text-sm font-medium rounded-full transition-colors duration-300">Start a project</a>
+      </nav>
+
+      <!-- Mobile Hamburger -->
+      <button id="nav-toggle" class="md:hidden relative w-10 h-10 flex items-center justify-center text-glow" aria-label="Toggle menu">
+        <span class="hamburger-line hamburger-top"></span>
+        <span class="hamburger-line hamburger-bottom"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Overlay -->
+  <div id="mobile-menu" class="mobile-menu-hidden fixed inset-0 z-40 md:hidden">
+    <div class="absolute inset-0 bg-void/95 backdrop-blur-xl"></div>
+    <nav class="relative z-10 h-full flex flex-col items-center justify-center gap-8">
+      <a href="#services" class="mobile-nav-link font-display text-3xl text-glow hover:text-amber transition-colors duration-300">Services</a>
+      <a href="#work" class="mobile-nav-link font-display text-3xl text-glow hover:text-amber transition-colors duration-300">Work</a>
+      <a href="#about" class="mobile-nav-link font-display text-3xl text-glow hover:text-amber transition-colors duration-300">About</a>
+      <a href="#contact" class="mobile-nav-link font-display text-3xl text-glow hover:text-amber transition-colors duration-300">Contact</a>
+      <a href="#contact" class="mobile-nav-link mt-4 bg-amber hover:bg-ember text-void px-8 py-3 text-lg font-medium rounded-full transition-colors duration-300">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .nav-backdrop {
+    background: rgba(10, 12, 16, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav-hidden {
+    opacity: 0;
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-amber);
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* Hamburger */
+  .hamburger-line {
+    position: absolute;
+    width: 20px;
+    height: 1.5px;
+    background: currentColor;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .hamburger-top { transform: translateY(-4px); }
+  .hamburger-bottom { transform: translateY(4px); }
+
+  .menu-open .hamburger-top { transform: rotate(45deg); }
+  .menu-open .hamburger-bottom { transform: rotate(-45deg); }
+
+  /* Mobile menu */
+  .mobile-menu-hidden {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-menu-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-nav-link {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, color 0.3s ease;
+  }
+
+  .mobile-menu-visible .mobile-nav-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-menu-visible .mobile-nav-link:nth-child(1) { transition-delay: 0.05s; }
+  .mobile-menu-visible .mobile-nav-link:nth-child(2) { transition-delay: 0.1s; }
+  .mobile-menu-visible .mobile-nav-link:nth-child(3) { transition-delay: 0.15s; }
+  .mobile-menu-visible .mobile-nav-link:nth-child(4) { transition-delay: 0.2s; }
+  .mobile-menu-visible .mobile-nav-link:nth-child(5) { transition-delay: 0.25s; }
+</style>
+
+<script>
+  // Show/hide nav based on hero visibility
+  const nav = document.getElementById('site-nav');
+  const heroSection = document.querySelector('section');
+
+  if (nav && heroSection) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          nav.classList.remove('nav-visible');
+          nav.classList.add('nav-hidden');
+        } else {
+          nav.classList.remove('nav-hidden');
+          nav.classList.add('nav-visible');
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(heroSection);
+  }
+
+  // Active section tracking
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach((link) => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+          });
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  sections.forEach((section) => sectionObserver.observe(section));
+
+  // Mobile menu toggle
+  const toggle = document.getElementById('nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (toggle && mobileMenu) {
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.contains('mobile-menu-visible');
+      if (isOpen) {
+        mobileMenu.classList.remove('mobile-menu-visible');
+        mobileMenu.classList.add('mobile-menu-hidden');
+        toggle.classList.remove('menu-open');
+      } else {
+        mobileMenu.classList.remove('mobile-menu-hidden');
+        mobileMenu.classList.add('mobile-menu-visible');
+        toggle.classList.add('menu-open');
+      }
+    });
+
+    // Close menu on link click
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('mobile-menu-visible');
+        mobileMenu.classList.add('mobile-menu-hidden');
+        toggle.classList.remove('menu-open');
+      });
+    });
+  }
+</script>

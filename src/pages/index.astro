@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import Portfolio from '../components/Portfolio.astro';
@@ -9,29 +10,76 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
+  <Nav />
   <main>
     <Hero />
     <Services />
-
-    <!-- Section divider -->
-    <div class="flex items-center justify-center py-4" aria-hidden="true">
-      <div class="section-divider h-px w-full max-w-xs bg-gradient-to-r from-transparent via-amber/30 to-transparent"></div>
-    </div>
-
     <Portfolio />
     <About />
     <Contact />
   </main>
   <Footer />
+
+  <!-- Back to top button -->
+  <button
+    id="back-to-top"
+    class="fixed bottom-6 right-6 z-40 w-10 h-10 rounded-full flex items-center justify-center text-cloud hover:text-glow border border-glass-border hover:border-amber/30 transition-all duration-300 opacity-0 pointer-events-none"
+    style="background: rgba(255,255,255,0.04); backdrop-filter: blur(10px);"
+    aria-label="Back to top"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
 </Layout>
 
-<style>
-  .section-divider {
-    animation: dividerPulse 4s ease-in-out infinite alternate;
-  }
+<script>
+  import Lenis from 'lenis';
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-  @keyframes dividerPulse {
-    0% { opacity: 0.3; max-width: 16rem; }
-    100% { opacity: 0.6; max-width: 20rem; }
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Initialize Lenis smooth scrolling
+  const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  });
+
+  lenis.on('scroll', ScrollTrigger.update);
+
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+  gsap.ticker.lagSmoothing(0);
+
+  // Back-to-top button visibility
+  const backToTop = document.getElementById('back-to-top');
+  const hero = document.getElementById('hero');
+
+  if (backToTop && hero) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          backToTop.style.opacity = '0';
+          backToTop.style.pointerEvents = 'none';
+        } else {
+          backToTop.style.opacity = '1';
+          backToTop.style.pointerEvents = 'auto';
+        }
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(hero);
+
+    backToTop.addEventListener('click', () => {
+      lenis.scrollTo(0);
+    });
+  }
+</script>
+
+<style>
+  #back-to-top {
+    transition: opacity 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
 </style>

@@ -1,106 +1,76 @@
 ---
 ---
 
-<section id="about" class="relative py-32 lg:py-40 overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-b from-navy via-twilight/10 to-navy"></div>
+<section id="about" class="relative overflow-hidden" style="padding-top: var(--section-gap); padding-bottom: var(--section-gap);">
+  <!-- Background: void with contrails at low opacity -->
+  <div class="absolute inset-0 bg-void">
+    <img
+      src="/images/contrails.png"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover opacity-15"
+      style="filter: contrast(1.05) saturate(0.9);"
+      loading="lazy"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-void/60 via-void/80 to-void"></div>
+  </div>
 
-  <!-- Decorative elements -->
-  <div class="absolute top-1/4 left-0 w-64 h-64 bg-amber/5 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-twilight/20 rounded-full blur-3xl"></div>
+  <div class="relative z-10 mx-auto px-6 lg:px-8" style="width: min(85vw, 900px);">
+    <!-- Section Header -->
+    <p class="section-label text-amber font-sans font-medium text-sm mb-4" style="font-variant: all-small-caps; letter-spacing: 0.15em;">Who We Are</p>
+    <h2 class="section-title font-display text-glow leading-tight mb-8" style="font-size: var(--text-h1)">
+      A small studio with a wide perspective
+    </h2>
 
-  <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-    <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-      <!-- Left Column - Text -->
-      <div>
-        <p class="reveal text-amber tracking-[0.3em] uppercase text-sm mb-4">Who We Are</p>
-        <h2 class="reveal font-display text-4xl md:text-5xl text-cream leading-tight mb-8">
-          A small studio with a wide perspective
-        </h2>
+    <!-- Copy -->
+    <p class="about-text text-lg text-cloud/80 leading-relaxed max-w-[42ch] mb-12" style="font-size: var(--text-body);">
+      We're a small studio in the Midwest — where the sky is wide and good work speaks for itself. We build websites that earn trust at first glance and keep earning it in search results.
+    </p>
 
-        <div class="space-y-6 text-lg text-cream/70 leading-relaxed">
-          <p class="reveal">
-            We're based in the Midwest — where the sky is wide and the opportunities are endless. That perspective shapes everything we do.
-          </p>
-          <p class="reveal">
-            We believe great businesses deserve to be seen. Whether you're just getting started online or ready to level up, we bring the same care and craft to every project.
-          </p>
+    <!-- Stats -->
+    <div class="about-stats pt-10 border-t border-glass-border">
+      <div class="flex flex-wrap items-center gap-8 md:gap-12">
+        <div>
+          <p class="font-display text-4xl text-amber mb-1">100%</p>
+          <p class="text-sm text-slate uppercase tracking-wider font-sans">Satisfaction</p>
         </div>
-
-        <div class="reveal mt-10 pt-10 border-t border-cream/10">
-          <div class="flex items-center gap-8">
-            <div>
-              <p class="font-display text-4xl text-amber mb-1">100%</p>
-              <p class="text-sm text-cream/50 uppercase tracking-wider">Satisfaction</p>
-            </div>
-            <div class="w-px h-12 bg-cream/10"></div>
-            <div>
-              <p class="font-display text-4xl text-amber mb-1">24hr</p>
-              <p class="text-sm text-cream/50 uppercase tracking-wider">Response time</p>
-            </div>
-            <div class="w-px h-12 bg-cream/10"></div>
-            <div>
-              <p class="font-display text-4xl text-amber mb-1">∞</p>
-              <p class="text-sm text-cream/50 uppercase tracking-wider">Revisions</p>
-            </div>
-          </div>
+        <div class="w-px h-12 bg-glass-border hidden sm:block"></div>
+        <div>
+          <p class="font-display text-4xl text-amber mb-1">24hr</p>
+          <p class="text-sm text-slate uppercase tracking-wider font-sans">Response</p>
         </div>
-      </div>
-
-      <!-- Right Column - Visual Element -->
-      <div class="reveal relative">
-        <div class="relative aspect-square max-w-md mx-auto">
-          <!-- Decorative frame -->
-          <div class="absolute inset-4 border border-cream/10"></div>
-          <div class="absolute inset-8 border border-amber/20"></div>
-
-          <!-- Center content -->
-          <div class="absolute inset-0 flex items-center justify-center">
-            <div class="text-center">
-              <div class="font-display text-8xl lg:text-9xl text-cream/5 leading-none">V</div>
-              <p class="text-cream/40 text-sm tracking-[0.3em] uppercase mt-4">Vantage Studio</p>
-              <p class="text-cream/30 text-xs tracking-wider mt-2">Est. 2024</p>
-            </div>
-          </div>
-
-          <!-- Corner accents -->
-          <div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-amber/40"></div>
-          <div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-amber/40"></div>
-          <div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-amber/40"></div>
-          <div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-amber/40"></div>
+        <div class="w-px h-12 bg-glass-border hidden sm:block"></div>
+        <div>
+          <p class="font-display text-4xl text-amber mb-1">&infin;</p>
+          <p class="text-sm text-slate uppercase tracking-wider font-sans">Revisions</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<style>
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-
 <script>
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-  };
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, index * 100);
-      }
-    });
-  }, observerOptions);
+  gsap.registerPlugin(ScrollTrigger);
 
-  document.querySelectorAll('#about .reveal').forEach(el => observer.observe(el));
+  gsap.from('#about .section-label', {
+    scrollTrigger: { trigger: '#about', start: 'top 85%' },
+    y: 30, opacity: 0, duration: 0.8, ease: 'power3.out'
+  });
+
+  gsap.from('#about .section-title', {
+    scrollTrigger: { trigger: '#about', start: 'top 85%' },
+    y: 40, opacity: 0, duration: 0.8, delay: 0.1, ease: 'power3.out'
+  });
+
+  gsap.from('#about .about-text', {
+    scrollTrigger: { trigger: '#about .about-text', start: 'top 85%' },
+    y: 30, opacity: 0, duration: 0.8, delay: 0.2, ease: 'power3.out'
+  });
+
+  gsap.from('#about .about-stats', {
+    scrollTrigger: { trigger: '#about .about-stats', start: 'top 85%' },
+    y: 30, opacity: 0, duration: 0.8, ease: 'power3.out'
+  });
 </script>
